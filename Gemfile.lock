@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    image_matcher (0.1.0)
+    image_matcher (0.2.0)
       rmagick (>= 2.13.4)
 
 GEM
