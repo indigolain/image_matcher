@@ -1,13 +1,15 @@
-require 'fileutils'
-require "bundler/setup"
-require "image_matcher"
+# frozen_string_literal: true
 
-SPEC_ROOT = File.dirname(__FILE__) + "/"
-TEMP_DIR = SPEC_ROOT + "temp/"
+require 'fileutils'
+require 'bundler/setup'
+require 'image_matcher'
+
+SPEC_ROOT = File.dirname(__FILE__) + '/'
+TEMP_DIR = SPEC_ROOT + 'temp/'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
+  config.example_status_persistence_file_path = '.rspec_status'
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
@@ -27,9 +29,7 @@ end
 
 def create_random_image(width: 100, height: 100, filename: 'tmp.bmp')
   data = Array.new(height) do
-    Array.new(width) do
-      [rand(255), rand(255), rand(255)]
-    end
+    Array.new(width) { [rand(255), rand(255), rand(255)] }
   end
 
   img = Magick::Image.new(width, height)

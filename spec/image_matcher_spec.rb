@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe ImageMatcher do
-  it "has a version number" do
+  it 'has a version number' do
     expect(ImageMatcher::VERSION).not_to be nil
   end
 
@@ -10,7 +12,7 @@ RSpec.describe ImageMatcher do
 
     before { create_random_image(filename: file_name) }
 
-    let(:file_name) { "input_image.bmp" }
+    let(:file_name) { 'input_image.bmp' }
     let(:input_image_name) { TEMP_DIR + file_name }
     let(:reference_image_name) { TEMP_DIR + file_name }
 
@@ -18,11 +20,13 @@ RSpec.describe ImageMatcher do
   end
 
   describe '.image_matches?' do
-    subject { ImageMatcher.image_matches?(input_image_name, reference_image_name) }
+    subject do
+      ImageMatcher.image_matches?(input_image_name, reference_image_name)
+    end
 
     before { create_random_image(filename: file_name) }
 
-    let(:file_name) { "input_image.bmp" }
+    let(:file_name) { 'input_image.bmp' }
     let(:input_image_name) { TEMP_DIR + file_name }
     let(:reference_image_name) { TEMP_DIR + file_name }
 
