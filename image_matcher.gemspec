@@ -17,6 +17,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/indigolain/image_matcher'
   spec.license       = 'MIT'
 
+  spec.metadata['homepage_uri'] = spec.homepage
+
   spec.files         = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject do |f|
       f.match(%r{^(test|spec|features)/})
